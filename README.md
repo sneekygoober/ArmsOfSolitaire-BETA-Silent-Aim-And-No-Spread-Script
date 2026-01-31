@@ -1,2 +1,3 @@
-# ArmsOfSolitaire-BETA-Silent-Aim-And-No-Spread-Script
-This is a basic silent aim with no UI and no spread for https://www.roblox.com/games/2555870920/ArmsOfSolitaire-BETA.  Please note that your executor must at least support hookfunction, require and debug.getupvalues.
+This script is open-source and free. Anyone can modify/use this script without restrictions.
+
+You can also view this script over at [scriptblox.com](https://scriptblox.com/script/ArmsOfSolitaire-BETA-Silent-Aim-And-No-Spread-Keyless-97957) or [haxhell.com](https://haxhell.com/scripts/armsofsolitaire-beta-armsofsolitaire-beta-silent-aim-and-no-spread-keyless).
