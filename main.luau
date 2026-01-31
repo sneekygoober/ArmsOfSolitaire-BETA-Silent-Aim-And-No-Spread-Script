@@ -19,7 +19,7 @@ local mouse = plr:GetMouse();
 
 local s, r = pcall(require, RF.Scripts.GameplayManager.Classes.PlayerController.Classes.WeaponsController.Slots.GunController);
 if not s then
-    return warn(executor .. " returned an error while trying to require RS.Scripts.GameplayManager.Classes.PlayerController.Classes.WeaponsController.Slots.GunController:\n" .. r);
+    return warn(executor .. " returned an error while trying to require RF.Scripts.GameplayManager.Classes.PlayerController.Classes.WeaponsController.Slots.GunController:\n" .. r);
 end;
 
 local GunController = r;
