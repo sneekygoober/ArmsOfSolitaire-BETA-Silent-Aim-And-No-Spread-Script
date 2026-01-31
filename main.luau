@@ -94,7 +94,6 @@ GunController.GetSpread = function() return 0; end;
 local old; old = clonefunction(hookfunction(GunController.Discharge_Bullet, newcclosure(function(_, origin: Vector3, __)
     local c = getTarget();
     if c then
-        print("intercept")
         return old(_, origin, (c.Position - origin).Unit);
     end;
     return old(_, origin, __);
