@@ -104,7 +104,7 @@ GunController.GetSpread = function() return 0; end;
 clonefunction(hookfunction(HeadDamage, newcclosure(function()
     return true;
 end)));
-clonefunction(hookfunction(HeadDamage, newcclosure(function()
+clonefunction(hookfunction(CalcDamage, newcclosure(function()
     return math.huge;
 end)));
 
