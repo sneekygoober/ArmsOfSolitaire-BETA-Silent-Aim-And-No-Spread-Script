@@ -10,6 +10,7 @@ if not (hookfunction and require and debug.getupvalues) then
 end;
 
 local RF: ReplicatedFirst = cloneref(game:GetService("ReplicatedFirst"));
+local RS: ReplicatedStorage = cloneref(game:GetService("ReplicatedStorage"));
 local Players: Players = cloneref(game:GetService("Players"));
 
 local plr = Players.LocalPlayer;
@@ -21,6 +22,16 @@ local s, r = pcall(require, RF.Scripts.GameplayManager.Classes.PlayerController.
 if not s then
     return warn(executor .. " returned an error while trying to require RF.Scripts.GameplayManager.Classes.PlayerController.Classes.WeaponsController.Slots.GunController:\n" .. r);
 end;
+
+local s, HeadDamage = pcall(require, RS.Functions.IsMostlyHeadDamage);
+if not s then
+    return warn(executor .. " returned an error while trying to require RS.Functions.IsMostlyHeadDamage:\n" .. r);
+end;
+
+local s, CalcDamage = pcall(require, RS.Functions.CalculateDamage);
+if not s then
+    return warn(executor .. " returned an error while trying to require RS.Functions.CalculateDamage:\n" .. r);
+end
 
 local GunController = r;
 for _, v in next, debug.getupvalues(GunController.new) do
@@ -90,6 +101,12 @@ local getTarget = function()
 end;
 
 GunController.GetSpread = function() return 0; end;
+clonefunction(hookfunction(HeadDamage, newcclosure(function()
+    return true;
+end)));
+clonefunction(hookfunction(HeadDamage, newcclosure(function()
+    return math.huge;
+end)));
 
 local old; old = clonefunction(hookfunction(GunController.Discharge_Bullet, newcclosure(function(_, origin: Vector3, __)
     local c = getTarget();
