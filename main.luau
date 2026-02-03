@@ -108,7 +108,7 @@ clonefunction(hookfunction(CalcDamage, newcclosure(function()
     return math.huge;
 end)));
 
-local old; old = clonefunction(hookfunction(GunController.Discharge_Bullet, newcclosure(function(_, origin: Vector3, __)
+local old; old = clonefunction(hookfunction(rawget(GunController, "Discharge_Bullet"), newcclosure(function(_, origin: Vector3, __)
     local c = getTarget();
     if c then
         return old(_, origin, (c.Position - origin).Unit);
